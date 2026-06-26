@@ -306,6 +306,200 @@
 
 </head>
 <body class='' >
+<header id="mahouno-static-header" class="mahouno-static-header" aria-label="サイトヘッダー">
+  <div class="mahouno-static-header-inner">
+    <a class="mahouno-static-logo" href="/">本日の幸せ<br>おだし</a>
+    <nav class="mahouno-static-nav" aria-label="ヘッダーメニュー">
+      <a href="/">ホーム</a>
+      <details>
+        <summary>メニュー</summary>
+        <div class="mahouno-static-subnav">
+          <a href="/だし教室/">だし教室</a>
+          <a href="/手前味噌仕込み教室/">手前味噌仕込み教室</a>
+          <a href="/美ライフ講座/">魔法の味噌汁ダイエット</a>
+        </div>
+      </details>
+      <a href="/プロフィール/">プロフィール</a>
+      <a href="/お問い合わせ/">お問い合わせ</a>
+      <a href="/about-2/">感染対策について</a>
+    </nav>
+  </div>
+</header>
+<style id="mahouno-static-header-style">
+  #SITE_HEADER,
+  #SITE_HEADER_WRAPPER,
+  #SITE_HEADER-placeholder {
+    display: none !important;
+  }
+
+  .mahouno-static-header {
+    background: rgba(255, 255, 255, 0.97);
+    border-bottom: 1px solid #ded7cf;
+    box-sizing: border-box;
+    color: #5f5a52;
+    font-family: Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 2147483000;
+  }
+
+  .mahouno-static-header *,
+  .mahouno-static-header *::before,
+  .mahouno-static-header *::after {
+    box-sizing: border-box;
+  }
+
+  .mahouno-static-header-inner {
+    align-items: center;
+    display: flex;
+    gap: 24px;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 980px;
+    min-height: 78px;
+    padding: 10px 20px;
+    width: 100%;
+  }
+
+  .mahouno-static-logo {
+    align-items: center;
+    border: 1px solid #aaa;
+    border-radius: 999px;
+    color: inherit;
+    display: flex;
+    flex: 0 0 auto;
+    font-size: 12px;
+    height: 58px;
+    justify-content: center;
+    line-height: 1.35;
+    text-align: center;
+    text-decoration: none;
+    width: 58px;
+  }
+
+  .mahouno-static-nav {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+    justify-content: flex-end;
+    font-size: 14px;
+  }
+
+  .mahouno-static-nav a,
+  .mahouno-static-nav summary {
+    color: inherit;
+    cursor: pointer;
+    list-style: none;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .mahouno-static-nav summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .mahouno-static-nav details {
+    position: relative;
+  }
+
+  .mahouno-static-subnav {
+    background: rgba(255, 255, 255, 0.98);
+    border: 1px solid #d8d0c6;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    display: grid;
+    gap: 10px;
+    min-width: 210px;
+    padding: 12px 14px;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 12px);
+    z-index: 2;
+  }
+
+  @media (max-width: 767px) {
+    html,
+    body {
+      overflow-x: hidden !important;
+    }
+
+    body {
+      background: #fff;
+    }
+
+    .mahouno-static-header-inner {
+      align-items: flex-start;
+      gap: 10px;
+      min-height: 72px;
+      padding: 9px 12px;
+    }
+
+    .mahouno-static-logo {
+      font-size: 11px;
+      height: 54px;
+      width: 54px;
+    }
+
+    .mahouno-static-nav {
+      font-size: 11px;
+      gap: 8px 10px;
+      line-height: 1.5;
+      max-width: calc(100vw - 84px);
+    }
+
+    .mahouno-static-subnav {
+      left: 12px;
+      min-width: 0;
+      position: fixed;
+      right: 12px;
+      top: 68px;
+      width: auto;
+    }
+
+    #SITE_CONTAINER {
+      max-width: 100% !important;
+      overflow: hidden !important;
+      width: 100% !important;
+    }
+
+    #site-root {
+      transform-origin: top left;
+      will-change: transform;
+    }
+  }
+</style>
+<script>
+  (function () {
+    function fitMobileWixPage() {
+      var root = document.getElementById("site-root");
+      var container = document.getElementById("SITE_CONTAINER");
+      if (!root || !container) return;
+
+      if (window.innerWidth <= 767) {
+        var scale = Math.min(1, window.innerWidth / 980);
+        root.style.width = "980px";
+        root.style.minWidth = "980px";
+        root.style.transform = "scale(" + scale + ")";
+        container.style.height = Math.ceil(root.scrollHeight * scale) + "px";
+        container.style.overflow = "hidden";
+      } else {
+        root.style.width = "";
+        root.style.minWidth = "";
+        root.style.transform = "";
+        container.style.height = "";
+        container.style.overflow = "";
+      }
+    }
+
+    window.addEventListener("load", fitMobileWixPage);
+    window.addEventListener("resize", fitMobileWixPage);
+    document.addEventListener("DOMContentLoaded", fitMobileWixPage);
+    setTimeout(fitMobileWixPage, 400);
+    setTimeout(fitMobileWixPage, 1400);
+    setTimeout(fitMobileWixPage, 3200);
+  })();
+</script>
 <script type="text/javascript">
     var bodyCacheable = true;
     
