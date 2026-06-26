@@ -1190,6 +1190,68 @@
 
 
 
+
+<style id="mahouno-menu-mobile-polish">
+  @media (max-width: 767px) {
+    html,
+    body {
+      max-width: 100%;
+      overflow-x: hidden !important;
+    }
+
+    img,
+    video,
+    iframe,
+    wix-image,
+    wow-image {
+      max-width: 100% !important;
+    }
+
+    #SITE_CONTAINER,
+    #main_MF,
+    #site-root,
+    #masterPage,
+    #PAGES_CONTAINER,
+    #SITE_PAGES {
+      max-width: 100% !important;
+      overflow-x: hidden !important;
+    }
+
+    [data-mesh-id$="inlineContent-gridContainer"],
+    [data-mesh-id$="inlineContent"],
+    [data-mesh-id$="centeredContent"] {
+      max-width: 100vw !important;
+    }
+
+    .mahouno-static-header + #SITE_CONTAINER {
+      margin-top: 0 !important;
+    }
+
+    .mahouno-static-nav {
+      row-gap: 6px !important;
+    }
+  }
+</style>
+<script id="mahouno-menu-mobile-polish-script">
+  (function () {
+    function refreshMenuMobileHeight() {
+      var root = document.getElementById("site-root");
+      var container = document.getElementById("SITE_CONTAINER");
+      if (!root || !container || window.innerWidth > 767) return;
+      window.requestAnimationFrame(function () {
+        var scale = Math.min(1, window.innerWidth / 980);
+        container.style.height = Math.ceil(root.scrollHeight * scale) + "px";
+      });
+    }
+
+    window.addEventListener("load", refreshMenuMobileHeight);
+    window.addEventListener("resize", refreshMenuMobileHeight);
+    window.addEventListener("orientationchange", refreshMenuMobileHeight);
+    setTimeout(refreshMenuMobileHeight, 800);
+    setTimeout(refreshMenuMobileHeight, 2200);
+  })();
+</script>
+
     <!--pageHtmlEmbeds.bodyEnd start-->
     <script type="wix/htmlEmbeds" id="pageHtmlEmbeds.bodyEnd start"></script>
     

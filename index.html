@@ -1078,10 +1078,12 @@
         }
 
         .mobile-card img {
-          display: block;
-          height: auto;
-          margin-bottom: 14px;
-          width: 100%;
+          aspect-ratio: 1 / 1 !important;
+          display: block !important;
+          height: min(330px, calc(100vw - 40px)) !important;
+          margin-bottom: 14px !important;
+          object-fit: cover !important;
+          width: 100% !important;
         }
 
         .mobile-card h2,
@@ -1323,6 +1325,13 @@
           width: min(330px, calc(100vw - 32px)) !important;
           height: auto !important;
         }
+
+        #mahouno-mobile-site main,
+        #mahouno-mobile-site section,
+        #mahouno-mobile-site article {
+          height: auto !important;
+          min-height: 0 !important;
+        }
       }
     </style>
     <script>
@@ -1370,6 +1379,212 @@
         window.addEventListener("load", addYouTubeSection);
         setTimeout(addYouTubeSection, 1500);
         setTimeout(addYouTubeSection, 4000);
+      })();
+    </script>
+    <style id="mahouno-instagram-feed-style">
+      #comp-m2b9wq0h1 {
+        display: none !important;
+      }
+
+      .mahouno-instagram-feed {
+        background: #d9d9d9;
+        box-sizing: border-box;
+        color: #111;
+        font-family: "MS PMincho", "Hiragino Mincho Pro", "Yu Mincho", serif;
+        padding: 54px 20px 66px;
+        width: 100%;
+      }
+
+      .mahouno-instagram-inner {
+        margin: 0 auto;
+        max-width: 760px;
+        width: 100%;
+      }
+
+      .mahouno-instagram-profile {
+        align-items: center;
+        display: flex;
+        gap: 28px;
+        margin: 0 auto 34px;
+        max-width: 520px;
+      }
+
+      .mahouno-instagram-avatar {
+        border-radius: 999px;
+        display: block;
+        height: 118px;
+        object-fit: cover;
+        width: 118px;
+      }
+
+      .mahouno-instagram-name {
+        color: #111;
+        font-size: 26px;
+        letter-spacing: 0;
+        line-height: 1.2;
+        text-decoration: none;
+      }
+
+      .mahouno-instagram-grid {
+        display: grid;
+        gap: 8px;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        margin: 0 auto;
+      }
+
+      .mahouno-instagram-post {
+        aspect-ratio: 1 / 1;
+        background: #cfcfcf;
+        display: block;
+        overflow: hidden;
+      }
+
+      .mahouno-instagram-post img {
+        display: block;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.25s ease;
+        width: 100%;
+      }
+
+      .mahouno-instagram-post:hover img {
+        transform: scale(1.04);
+      }
+
+      .mahouno-instagram-more {
+        align-items: center;
+        background: #111;
+        color: #fff;
+        display: flex;
+        font-size: 15px;
+        height: 42px;
+        justify-content: center;
+        margin: 26px auto 0;
+        max-width: 190px;
+        text-decoration: none;
+        width: 100%;
+      }
+
+      @media (max-width: 767px) {
+        .mahouno-instagram-feed {
+          padding: 34px 16px 42px;
+        }
+
+        .mahouno-instagram-inner {
+          max-width: 360px;
+        }
+
+        .mahouno-instagram-profile {
+          gap: 16px;
+          margin-bottom: 22px;
+          max-width: 320px;
+        }
+
+        .mahouno-instagram-avatar {
+          height: 72px;
+          width: 72px;
+        }
+
+        .mahouno-instagram-name {
+          font-size: 20px;
+        }
+
+        .mahouno-instagram-grid {
+          gap: 4px;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .mahouno-instagram-post:nth-child(n+10) {
+          display: none;
+        }
+
+        .mahouno-instagram-more {
+          font-size: 13px;
+          height: 40px;
+          margin-top: 20px;
+          max-width: 160px;
+        }
+      }
+    </style>
+    <script>
+      (function () {
+        var instagramUrl = "https://www.instagram.com/odashi012";
+        var profileImage = "https://static.wixstatic.com/media/0a3a8b_5fa054276c64415d931f3b4f41e94d94~mv2.jpg/v1/fill/w_487,h_639,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/1619873845012_.jpg";
+        var images = [
+          "https://static.wixstatic.com/media/0a3a8b_5e0f6c1edd3245a7a36bed348f96fd97~mv2.png/v1/fill/w_634,h_640,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_5183_edited.png",
+          "https://static.wixstatic.com/media/0a3a8b_5caf8f9e0e854faf8bf7bb94aa760e78~mv2.jpg/v1/fill/w_634,h_640,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_5181_edited.jpg",
+          "https://static.wixstatic.com/media/0a3a8b_72a3c79b9c9244958c5baaed048d8d32~mv2.jpg/v1/fill/w_634,h_640,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/FB_IMG_1619007254857.jpg",
+          "https://static.wixstatic.com/media/0a3a8b_d9d40d2ddd8c4a70942580d5ab62fd2d~mv2.jpg/v1/crop/x_118,y_0,w_823,h_846/fill/w_634,h_652,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_5601%202.jpg",
+          "https://static.wixstatic.com/media/0a3a8b_a302b185f6f64d70a0337ef7684f2b21~mv2.jpg/v1/fill/w_900,h_675,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/0a3a8b_a302b185f6f64d70a0337ef7684f2b21~mv2.jpg",
+          "https://static.wixstatic.com/media/0a3a8b_716033af28494fcb926d9ad084b29f3b~mv2.jpg/v1/fill/w_588,h_392,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/0a3a8b_716033af28494fcb926d9ad084b29f3b~mv2.jpg",
+          "https://static.wixstatic.com/media/0a3a8b_eb46e31902954f669ab9d9ee73e2f2ef~mv2.jpg/v1/fill/w_588,h_392,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/0a3a8b_eb46e31902954f669ab9d9ee73e2f2ef~mv2.jpg",
+          "https://static.wixstatic.com/media/0a3a8b_c7769ac20fd9472d82c53aa17f48d7a1~mv2.jpg/v1/fill/w_900,h_360,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/0a3a8b_c7769ac20fd9472d82c53aa17f48d7a1~mv2.jpg",
+          "https://static.wixstatic.com/media/0a3a8b_0516fd14a7be4a45bd0391ebbbccaddd~mv2.jpg/v1/crop/x_0,y_58,w_750,h_840/fill/w_749,h_840,al_c,q_85,enc_avif,quality_auto/IMG_5187%202_JPG.jpg",
+          "https://static.wixstatic.com/media/0a3a8b_23bc6f096dbc405eabd98b75f7c917ad~mv2.jpg/v1/fill/w_808,h_606,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_1322_JPG.jpg",
+          "https://static.wixstatic.com/media/0a3a8b_5fede861fb9e44e997e3d4dd8df8c332~mv2.jpg/v1/fill/w_788,h_810,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/0a3a8b_5fede861fb9e44e997e3d4dd8df8c332~mv2.jpg",
+          "https://static.wixstatic.com/media/0a3a8b_fc3a3853f6d4470f9636a7de669838fc~mv2.jpg/v1/fill/w_872,h_580,al_c,lg_1,q_85,enc_avif,quality_auto/0a3a8b_fc3a3853f6d4470f9636a7de669838fc~mv2.jpg",
+          "https://static.wixstatic.com/media/0a3a8b_36d084db29584a2abe1b90d2c5069fd5~mv2.png/v1/fill/w_356,h_292,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_5281_PNG.png",
+          "https://static.wixstatic.com/media/0a3a8b_421b358dce9f4332b0504befb14358ac~mv2.jpg/v1/fill/w_760,h_192,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/%E5%90%8D%E7%A7%B0%E6%9C%AA%E8%A8%AD%E5%AE%9A%E3%81%AE%E3%82%A2%E3%83%BC%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%202_edited.jpg",
+          "https://static.wixstatic.com/media/0a3a8b_f660f9452b324bc59c85234e06a49dab~mv2.jpg/v1/fill/w_484,h_128,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/%E5%90%8D%E7%A7%B0%E6%9C%AA%E8%A8%AD%E5%AE%9A%E3%81%AE%E3%82%A2%E3%83%BC%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%203_edited.jpg",
+          "https://static.wixstatic.com/media/0a3a8b_54ff335f45ec4327b53bff799f7bc40a~mv2.jpg/v1/fill/w_600,h_600,al_c,q_85,enc_avif,quality_auto/0a3a8b_54ff335f45ec4327b53bff799f7bc40a~mv2.jpg"
+        ];
+
+        function buildFeed() {
+          return [
+            '<section class="mahouno-instagram-feed" aria-label="Instagram">',
+            '<div class="mahouno-instagram-inner">',
+            '<div class="mahouno-instagram-profile">',
+            '<a href="' + instagramUrl + '" target="_blank" rel="noopener"><img class="mahouno-instagram-avatar" src="' + profileImage + '" alt="odashi012"></a>',
+            '<a class="mahouno-instagram-name" href="' + instagramUrl + '" target="_blank" rel="noopener">odashi012</a>',
+            '</div>',
+            '<div class="mahouno-instagram-grid">',
+            images.map(function (src, index) {
+              return '<a class="mahouno-instagram-post" href="' + instagramUrl + '" target="_blank" rel="noopener" aria-label="Instagram投稿 ' + (index + 1) + '"><img loading="eager" src="' + src + '" alt="Instagram投稿 ' + (index + 1) + '"></a>';
+            }).join(""),
+            '</div>',
+            '<a class="mahouno-instagram-more" href="' + instagramUrl + '" target="_blank" rel="noopener">もっと見る</a>',
+            '</div>',
+            '</section>'
+          ].join("");
+        }
+
+        function addInstagramFeed() {
+          var desktopSection = document.getElementById("mahouno-instagram-section");
+          var wixInstagramSection = document.getElementById("comp-m2b9wq0h1");
+          if (!desktopSection) {
+            desktopSection = document.createElement("div");
+            desktopSection.id = "mahouno-instagram-section";
+            desktopSection.innerHTML = buildFeed();
+          }
+
+          if (wixInstagramSection && wixInstagramSection.parentNode && desktopSection.parentNode !== wixInstagramSection.parentNode) {
+            wixInstagramSection.parentNode.insertBefore(desktopSection, wixInstagramSection);
+          }
+
+          var mobileMain = document.querySelector("#mahouno-mobile-site main");
+          var mobileAnchor = document.getElementById("mobile-youtube");
+          var mobileFeed = document.getElementById("mahouno-mobile-instagram-section");
+          if (mobileMain && !mobileFeed) {
+            mobileFeed = document.createElement("div");
+            mobileFeed.id = "mahouno-mobile-instagram-section";
+            mobileFeed.innerHTML = buildFeed();
+            if (mobileAnchor) {
+              mobileMain.insertBefore(mobileFeed, mobileAnchor);
+            } else {
+              mobileMain.appendChild(mobileFeed);
+            }
+          }
+        }
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", addInstagramFeed);
+        } else {
+          addInstagramFeed();
+        }
+
+        window.addEventListener("load", addInstagramFeed);
+        setTimeout(addInstagramFeed, 1200);
+        setTimeout(addInstagramFeed, 3500);
       })();
     </script>
     
